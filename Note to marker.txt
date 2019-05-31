@@ -1,0 +1,4 @@
+"Node JS with Express and EJS" was created before I knew about the requirement to not use Node packages
+I have left it in with permission from Dr Luofeng Xu
+
+Thanks. Nick Leslie

@@ -1,0 +1,5 @@
+Results
+Correlation: 0.9956728243033025
+Regression:
+Beta0: -32.290928402208465
+Beta1: 0.9123351516703843

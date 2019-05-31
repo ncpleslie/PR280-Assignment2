@@ -1,0 +1,19 @@
+{
+  "name": "pr280-assignment2-nodecli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "chalk": "2.4.2",
+    "figlet": "1.2.3",
+    "inquirer": "6.3.1",
+    "shelljs": "0.8.3"
+  },
+  "bin": {
+    "creator": "./src/index.js"
+  },
+  "keywords": []
+}
