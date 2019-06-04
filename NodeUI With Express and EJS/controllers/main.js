@@ -22,7 +22,7 @@ exports.postCalculations = (req, res, next) => {
     for (let i = 0; i <= 1; i++) {
       let text = req.files.text[i].data.toString()
       text = text.split('\r\n').map(item => {
-        return parseInt(item, 10)
+        return parseFloat(item)
       })
       array.push(text)
     }
@@ -31,7 +31,7 @@ exports.postCalculations = (req, res, next) => {
     let array = []
     for (let key in req.body) {
       let arrayOfNumbers = req.body[key].split(/[ ,]+/).map(item => {
-        return parseInt(item, 10)
+        return parseFloat(item)
       })
       array.push(arrayOfNumbers)
     }

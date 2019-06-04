@@ -4,7 +4,7 @@ export class DataInput {
   }
   formatNumbers() {
     this.numberGroup = this.numberGroup.split(/[ ,]+/).map(item => {
-      return parseInt(item, 10)
+      return parseFloat(item)
     })
   }
 
@@ -14,7 +14,7 @@ export class DataInput {
 
       reader.onload = e => {
         let ct = reader.result
-        let sortedNumbers = ct.split('\n').map(x => parseInt(x, 10))
+        let sortedNumbers = ct.split('\n').map(x => parseInt(x))
         resolve(sortedNumbers)
       }
       reader.onerror = e => {
