@@ -14,7 +14,7 @@ export class DataInput {
 
       reader.onload = e => {
         let ct = reader.result
-        let sortedNumbers = ct.split('\n').map(x => parseInt(x))
+        let sortedNumbers = ct.split('\n').map(x => parseFloat(x))
         resolve(sortedNumbers)
       }
       reader.onerror = e => {

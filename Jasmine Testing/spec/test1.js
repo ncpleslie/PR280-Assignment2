@@ -1,29 +1,4 @@
-describe("Basic Check For Original Source Code", function () {
-    'use strict'
-    describe("MathCalculations", function () {
-        var mathCalculations
-        beforeEach(function () {
-            mathCalculations = new MathCalculations()
-        });
-        it("should have an correlation function", function () {
-            expect(typeof mathCalculations.initCalculations).toBe('function')
-        })
-
-        it("should have an errorCheck function", function () {
-            expect(typeof mathCalculations.errorCheck).toBe('function')
-        })
-        it("should have an calcRegression function", function () {
-            expect(typeof mathCalculations.calcRegression).toBe('function')
-        })
-        it("should have an calcCorrelation function", function () {
-            expect(typeof mathCalculations.calcCorrelation).toBe('function')
-        })
-        it("should have an calcSum function", function () {
-            expect(typeof mathCalculations.calcSum).toBe('function')
-        })
-    })
-})
-
+// Unit Testing
 describe("Basic Checks for errorCheck", function () {
     'use strict'
     describe("MathCalculations", function () {
@@ -104,6 +79,66 @@ describe("Basic Checks for errorCheck", function () {
             ]
             let errorCheckReturn = mathCalculations.errorCheck(sentValue)
             expect(errorCheckReturn).toBe(true)
+        })
+    })
+})
+
+describe("Unit Tests", function () {
+    'use strict'
+    describe("MathCalculations", function () {
+        var mathCalculations
+        beforeEach(function () {
+            mathCalculations = new MathCalculations()
+        })
+        it("Check calcSum. [1,2] equal to 3", function () {
+            let a = [1,2]
+            let returnedValue = mathCalculations.calcSum(a)
+            expect(returnedValue).toBe(3)
+        })
+        it("Check calcSum. [1,2] not equal to 1", function () {
+            let a = [1,2]
+            let returnedValue = mathCalculations.calcSum(a)
+            expect(returnedValue).not.toBe(1)
+        })
+        it("Check calcRegression for beta1", function () {
+            let returnedValue = mathCalculations.calcRegression(1,2,3,4,5)
+            expect(returnedValue.beta1).toBeCloseTo(1.234)
+        })
+        it("Check calcRegression for beta0", function () {
+            let returnedValue = mathCalculations.calcRegression(1,2,3,4,5)
+            expect(returnedValue.beta0).toBeCloseTo(0.0638)
+        })
+        it("Check calcCorrelation for beta0", function () {
+            let returnedValue = mathCalculations.calcCorrelation(7747.7,5,580,59.2,74498,830.14)
+            expect(returnedValue).toBeCloseTo(0.8312)
+        })
+        
+    })
+})
+
+// Integration Testing
+describe("Basic Check For Original Source Code", function () {
+    'use strict'
+    describe("MathCalculations", function () {
+        var mathCalculations
+        beforeEach(function () {
+            mathCalculations = new MathCalculations()
+        });
+        it("should have an correlation function", function () {
+            expect(typeof mathCalculations.initCalculations).toBe('function')
+        })
+
+        it("should have an errorCheck function", function () {
+            expect(typeof mathCalculations.errorCheck).toBe('function')
+        })
+        it("should have an calcRegression function", function () {
+            expect(typeof mathCalculations.calcRegression).toBe('function')
+        })
+        it("should have an calcCorrelation function", function () {
+            expect(typeof mathCalculations.calcCorrelation).toBe('function')
+        })
+        it("should have an calcSum function", function () {
+            expect(typeof mathCalculations.calcSum).toBe('function')
         })
     })
 })
